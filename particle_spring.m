@@ -238,6 +238,7 @@ for t = 1:1:loopEnd
     % saving / displaying.
     if (mod(t,ddt) == 0)
         eK(t/ddt) = sum(vecnorm(pV,2,2).^2*mass/2);
+        eP(t/ddt) = sum(mass*-g*pX(:,YDIM));
         % Saves the angular momentum stuff for the second asignment.
         if dims(2) == 0
             aM(t/ddt) = sum(mass*(pX(:,XDIM).*pV(:,YDIM) - pX(:,YDIM).*pV(:,XDIM)));
